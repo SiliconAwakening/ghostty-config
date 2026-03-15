@@ -1,0 +1,139 @@
+# =============================================================================
+# Ghostty 配置文件
+# Author: AIEarnLab
+# 我正在运行的 Ghostty 配置文件
+# =============================================================================
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 字体设置 (Font)
+# ─────────────────────────────────────────────────────────────────────────────
+font-family = "JetBrains Mono"
+font-family-bold = "JetBrains Mono Bold"
+font-family-italic = "JetBrains Mono Italic"
+font-size = 14.0
+# 是否加粗字体（对某些字体更清晰）
+font-thicken = true  
+# 启用连字（contextual alternates）
+font-feature = "calt"                
+# 启用标准连字
+font-feature = "liga"                
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 主题与颜色 (Theme & Colors)
+# ─────────────────────────────────────────────────────────────────────────────
+theme = "Catppuccin Mocha"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 窗口与背景外观 (Window Appearance)
+# ─────────────────────────────────────────────────────────────────────────────
+# 背景透明度（0.0完全透明 ~ 1.0不透明）
+background-opacity = 0.7       
+# macOS 毛玻璃效果（clear / regular）,根据自己喜欢选择
+# background-blur = macos-glass-regular 
+background-blur = macos-glass-clear  
+# 背景纯色（在透明度<1时作为底色）
+background = #1e1e2e    
+  
+# 非焦点分屏的透明度
+unfocused-split-opacity = 0.80       
+# 左右内边距（像素）
+window-padding-x = 10  
+# 上下内边距（像素）
+window-padding-y = 8                 
+# 窗口状态保存策略：always / never / last
+window-save-state = always   
+# 窗口标题栏主题跟随系统：auto / light / dark
+window-theme = auto                  
+# macOS 标题栏样式：native / transparent
+macos-titlebar-style = transparent  
+# 使用非原生全屏（更灵活的分屏支持）
+
+macos-non-native-fullscreen = true   
+# ─────────────────────────────────────────────────────────────────────────────
+# 键盘快捷键 (Keybindings)  如果喜欢 VIM 风格，这里 cmd 可以换成 ctrl
+# ─────────────────────────────────────────────────────────────────────────────
+# 焦点切换（MAC 风格）
+keybind = cmd+h=goto_split:left
+# VIM 风格配置
+#keybind = ctrl+h=goto_split:left
+keybind = cmd+j=goto_split:down
+keybind = cmd+k=goto_split:up
+keybind = cmd+l=goto_split:right
+
+# 新建分屏（同上方向）
+keybind = cmd+shift+h=new_split:left
+keybind = cmd+shift+j=new_split:down
+keybind = cmd+shift+k=new_split:up
+keybind = cmd+d=new_split:right
+# 我用cmd+d分屏习惯了，还是配了 cmd+d,喜欢 vim 风格的可以修改为上面的风格
+# 标签页操作（macOS 常用）
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+
+# 重载配置（开发调试常用）
+keybind = cmd+shift+,=reload_config
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 鼠标与选择行为 (Mouse & Selection)
+# ─────────────────────────────────────────────────────────────────────────────
+# 输入时自动隐藏鼠标
+mouse-hide-while-typing = true    
+# 选中即复制（同时也设置了 clipboard 模式）
+copy-on-select = true  
+# 明确指定复制到系统剪贴板
+copy-on-select = clipboard           
+# ─────────────────────────────────────────────────────────────────────────────
+# 光标与滚动 (Cursor & Scrollback)
+# ─────────────────────────────────────────────────────────────────────────────
+# 光标样式：block / bar / underline
+cursor-style = bar   
+# 光标不透明度
+cursor-opacity = 0.9                
+# 回滚缓冲区行数（约2千万行，很大）
+scrollback-limit = 20000000          
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 快速终端（Quick Terminal / Quake 风格下拉终端）
+# ─────────────────────────────────────────────────────────────────────────────
+# 出现位置：top / bottom
+quick-terminal-position = top 
+# 出现在鼠标所在屏幕
+quick-terminal-screen = mouse 
+# 失去焦点自动隐藏
+quick-terminal-autohide = true      
+# 动画时长（秒）
+quick-terminal-animation-duration = 0.15  
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 剪贴板安全 (Clipboard Security)
+# ─────────────────────────────────────────────────────────────────────────────
+ # 粘贴时要求确认（防恶意命令）
+clipboard-paste-protection = true      
+# 启用 bracketed paste 模式安全保护
+clipboard-paste-bracketed-safe = true      
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Shell 与集成 (Shell Integration)
+# ─────────────────────────────────────────────────────────────────────────────
+# 启用 zsh 的 shell integration（提示符、导航等）
+
+shell-integration = zsh              
+# ─────────────────────────────────────────────────────────────────────────────
+# 窗口与程序行为 (Window & Application Behavior)
+# ─────────────────────────────────────────────────────────────────────────────
+ # 启动时创建初始窗口
+initial-window = true    
+# 最后一个窗口关闭后退出 Ghostty
+quit-after-last-window-closed = true 
+# 命令执行完毕后总是发送系统通知
+notify-on-command-finish = always    
+# 启用桌面通知
+desktop-notifications = true         
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 单元格微调（高级外观调整）
+# ─────────────────────────────────────────────────────────────────────────────
+# 单元格高度微调（正数=变高，负数=变矮）
+adjust-cell-height = 5%    
+# 下划线位置微调（百分比）
+adjust-underline-position = 30%      
